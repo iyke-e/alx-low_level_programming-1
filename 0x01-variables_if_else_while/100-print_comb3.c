@@ -1,25 +1,24 @@
 #include <stdio.h>
 /**
- * main - entry block
- * @void: no argument
- * Return: 0
- **/
+ * main - main block
+ * Description: print all possible combination of two digits
+ * in ascending order, seperated by a coma followed by a space
+ * Return: Alwasy return 0;
+ */
 int main(void)
 {
-	int num, num2, sum;
+	int digit1, digit2;
 
-	for (num = 0; num <= 9; num++)
+	for (digit1 = 0; digit1 < 9; digit1++)
 	{
-		for (num2 = 0; num2 <= 9; num2++)
+		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 		{
-			putchar(num + '0');
-			putchar(num2 + '0');
-			if (sum < 99)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-			sum++;
+			putchar((digit1 % 10) + '0');
+			putchar((digit2 % 10) + '0');
+			if (digit1 == 8 && digit2 == 9)
+				continue;
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
