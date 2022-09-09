@@ -6,20 +6,21 @@
  **/
 int main(void)
 {
-	int num, sum;
+	int num, num2, sum;
 
-	for (num = 0; num < 100; num++)
+	for (num = 0; num <= 9; num++)
 	{
-		putchar((i / 10) + '0');
-		putchar((i % 10) + '0');
-
-		if (sum < 99)
+		for (num2 = 0; num2 <= 9; num2++)
 		{
-			putchar(',');
-			putchar(' ');
+			putchar(num + '0');
+			putchar(num2 + '0');
+			if (sum < 99)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			sum++;
 		}
-
-		sum++;
 	}
 	putchar('\n');
 	return (0);
