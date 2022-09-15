@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_line - the entry point
+ * @n: number of lines
  * Description: draws a straight line in the terminal
  * Return: always 0
  */
