@@ -7,16 +7,14 @@
  */
 void print_diagonal(int n)
 {
-	int slash;
+	int diagonal;
 	int spaces;
-	int i;
 
 	if (n > 0)
 	{
-		for (slash = n; slash > 0; slash--)
+		for (diagonal = 1; diagonal <= n; diagonal++)
 		{
-			spaces = n - slash;
-			for (i = spaces; i < spaces; i--)
+			for (spaces = 1; spaces < diagonal; spaces++)
 			{
 				_putchar(' ');
 			}
