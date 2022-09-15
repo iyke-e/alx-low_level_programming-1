@@ -2,6 +2,6 @@
 
 git add .
 
-git commit -m "debugging"
+git commit -m "More functions, more nested loops"
 
 git push
