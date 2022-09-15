@@ -2,24 +2,15 @@
 /**
  * print_line - the entry point
  * Description: draws a straight line in the terminal
- * @n: number of dashes
  * Return: always 0
  */
 void print_line(int n)
 {
-	int i = 0;
+	int line;
 
-	if (n <= 0)
+	for (line = n; line > 0; line--)
 	{
-		_putchar('\n');
-		continue;
+		_putchar('_');
 	}
-	else
-	{
-		while (i < n)
-		{
-			_putchar('_');
-			i++
-				}
-	}
+	_putchar('\n');
 }
