@@ -1,28 +1,29 @@
 #include "main.h"
 /**
- * print_square - the entry point
- * Description: draws a square in the terminal
- * @size: size of the square
- * Return: always 0
+ * print_square -  function that draws a square on the terminal.
+ * @size: integer
  */
 void print_square(int size)
 {
-	int hashes;
-	int squares;
+	int x, y;
 
 	if (size > 0)
 	{
-		for (squares = 1; squares <= size; squares++)
+
+		for (x = 1; x <= size; x++)
 		{
-			for (hashes = 1; hashes <= size, hashes++)
+
+			for (y = 1; y <= size; y++)
 			{
 				_putchar('#');
 			}
 			_putchar('\n');
 		}
+
 	}
 	else
 	{
 		_putchar('\n');
 	}
+
 }
