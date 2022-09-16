@@ -1,68 +1,45 @@
-#include <math.h>
 #include "main.h"
-
 /**
- * power - exponents
- * @base: base
- * @exp: exponent
- * Return: result (int)
+ * print_number - prints number
+ *
+ * @n: integer to print to character
  */
-
-int  power(int base, int exp)
-{
-	int i, num;
-
-	num = 1;
-	for (i = 0; i < exp; ++i)
-		num *= base;
-
-	return (num);
-}
-
-/**
- * print_number - prints an integer
- * @n: number to print
- * Return void
- */
-
 void print_number(int n)
 {
-	int negative = 0;
-	int digit;
-	int divisor;
-	int begin = 0;
-	int place = 10;
+	int i;
+	int d = 1;
+	unsigned int x = n;
+	unsigned int y = n;
+	int c = 0;
 
+	if (n == 0)
+	{
+		_putchar('0');
+	}
 	if (n < 0)
 	{
-		negative = 1;
-		n = n * -1;
+		_putchar('-');
+		n = n + 1;
+		n = -n;
+		y = n;
+		x = n;
+		x += 1;
+		y += 1;
 	}
-	while (place >= 0)
+
+	while (x != 0)
 	{
-		/*divisor = pow(10, place);*/
-		divisor = power(10, place);
-		digit = ((n / divisor) % 10);
-		if (digit == 0 && begin == 0)
-		{
-			place--;
-		}
-		else if (digit != 0 && begin == 0)
-		{
-			begin = 1;
-			if (negative == 1)
-				_putchar('-');
-			_putchar('0' + digit);
-			place--;
-		}
-		else
-		{
-			_putchar('0' + digit);
-			place--;
-		}
+		x = x / 10;
+		c++;
 	}
-	if (digit == 0 && divisor == 1)
+	for (i = 1; i < c; i++)
 	{
-		_putchar(48);
+		d *= 10;
+	}
+	for (i = 0; i < c; i++)
+	{
+		_putchar(y / d + '0');
+		y = y % d;
+		d = d / 10;
 	}
 }
