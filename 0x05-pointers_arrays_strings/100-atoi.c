@@ -1,5 +1,4 @@
 #include "main.h"
-#include "2-strlen.c"
 /**
  * _atoi - the entry point
  *
@@ -12,7 +11,6 @@
 int _atoi(char *s)
 {
 	int i;
-	int len = _strlen(s);
 	int neg_sign = 1; /* initialize sign as positive */
 	int num = 0;
 
@@ -27,7 +25,7 @@ int _atoi(char *s)
 
 	if (s[i] == '-')
 	{
-		neg_sign * -1;
+		neg_sign *= -1;
 		i++;
 	}
 
