@@ -7,31 +7,25 @@
  */
 char *cap_string(char *s)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[i] != '\0')
 	{
-		if (_indexOf(s[i]))
-			continue;
-		if (s[i] >= 'a' && s[i] <= 'z' && _indexOf(s[i - 1] || i == 0))
-			s[i] = s[i] - 32;
+		if (s[0] <= 122 && s[0] >= 97)
+		{
+			s[0] = s[0] - 32;
+		}
+		if (s[i] == 32 || s[i] == 46 || s[i] == '\t' ||
+		    s[i] == '\n' || s[i] == 44 || s[i] == 59 ||
+		    s[i] == '!' || s[i] == '?' || s[i] == '(' ||
+		    s[i] == ')' || s[i] == '{' || s[i] == '}')
+		{
+			if (s[i + 1] <= 122 && s[i + 1] >= 97)
+			{
+				s[i + 1] = s[i + 1] - 32;
+			}
+		}
+		i++;
 	}
-}
-/**
- * _indexOf - returns boolean if special  character
- * @a: character to return
- * Return: true or false
- */
-int _indexOf(char a)
-{
-	int i;
-
-	char charArr[13] = {'\n', '\t', ' ', '.', ',', ';', ',', '!', '?', '(',
-			    ')', '{', '}'};
-	for (i = 0; i < 113; i++)
-	{
-		if (charArr[i] == a)
-			return (1);
-	}
-	return (0);
+	return (s);
 }
