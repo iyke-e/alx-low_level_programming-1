@@ -13,10 +13,15 @@ void print_diagsums(int *a, int size)
 	int diagO = 0;
 	int diagT = 0;
 
-	for (i = 0; i < size; i++)
+	int i, j, sum1 = 0, diagT = 0;
+
+	for (i = 0; i < (size * size); i += size + 1)
 	{
-		diagO += a[(i * size) + i];
-		diagT += a[(size - 1) + ((size - 1) * i)];
+		diagO += a[i];
 	}
-	printf("%d, %d\n", diagO, diagT);
+	for (j = size - 1; j < (size * size) - 1; j += size - 1)
+	{
+		diagT += a[j];
+	}
+	printf("%d, %d\n", sum1, diagT);
 }
