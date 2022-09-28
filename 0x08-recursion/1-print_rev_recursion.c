@@ -11,7 +11,7 @@ void _print_rev_recursion(char *s)
 	{
 		/* calls the next address space until it reach \0 */
 		/* creating a stack starting from s + n down to s */
-		_puts_recursion(s + 1);
+		_print_rev_recursion(s + 1);
 		_putchar(*s);
 	}
 }
