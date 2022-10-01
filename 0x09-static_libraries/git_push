@@ -2,6 +2,6 @@
 
 git add .
 
-git commit -m "Recursion"
+git commit -m "Static libs"
 
 git push
