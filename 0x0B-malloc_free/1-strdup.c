@@ -11,7 +11,7 @@
 char *_strdup(char *str)
 {
 	char *ptr;
-	int len_string = 0;
+	int len = 0;
 	int i;
 
 	if (str == NULL)
@@ -19,19 +19,19 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	while (str[c] != '\0')
+	while (str[len] != '\0')
 	{
-		c++;
+		len++;
 	}
 
-	ptr = malloc(sizeof(char) * c)
+	ptr = malloc(sizeof(char) * (len + 1))
 
 		if (ptr == NULL)
 		{
 			return (NULL);
 		}
 
-	for (i = 0; i < c; i++)
+	for (i = 0; i < len; i++)
 	{
 		ptr[i] = str[i];
 	}
